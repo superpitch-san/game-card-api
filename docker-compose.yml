@@ -1,0 +1,13 @@
+version: '3'
+services: 
+  card-game-api:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    container_name: card-game-api
+    command: python manage.py runserver 0.0.0.0:8000
+    working_dir: /app/card-game-api
+    volumes:
+      - .:/app/card-game-api
+    ports:
+      - '8000:8000'
